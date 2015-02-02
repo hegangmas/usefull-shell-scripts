@@ -7,7 +7,7 @@ case "$(pidof ss-ctrl | wc -w)" in
         ;;
 1)      # all ok
         ;;
-*)      echo "Removed double ssctl: $(date)" >> /var/log/amadeus.txt
+*)      echo "Removed double ssctl: $(date)" >> /tmp/ssctl.txt
         kill $(pidof ss-ctrl | awk '{print $1}')
         ;;
 esac
